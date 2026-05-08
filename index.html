@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <title>Tareas</title>
+</head>
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+
+  <div class="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8 border border-slate-200">
+
+   
+    <div class="text-center mb-8">
+
+      <h1 class="text-4xl font-bold text-slate-800">
+        Lista de Tareas
+      </h1>
+
+      <p class="text-slate-500 mt-2">
+        Gestiona tus tareas fácilmente
+      </p>
+
+    </div>
+
+   
+    <div class="flex gap-3 mb-6">
+
+      <input
+        id="inputTarea"
+        type="text"
+        placeholder="Escribe una tarea..."
+        class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+
+      <button
+        id="btnAdd"
+        onclick="addTask()"
+        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition"
+      >
+        Añadir
+      </button>
+
+    </div>
+
+    
+    <div class="grid grid-cols-2 gap-4 mb-6">
+
+      <button
+        id="btnShow"
+        onclick="showTasks()"
+        class="py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-medium transition"
+      >
+        Mostrar tareas
+      </button>
+
+      <button
+        id="btnDelete"
+        onclick="deleteTask()"
+        class="py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition"
+      >
+        Eliminar tarea
+      </button>
+
+      <button
+        id="btnExit"
+        onclick="exitApp()"
+        class="col-span-2 py-3 bg-amber-400 hover:bg-amber-500 text-slate-900 rounded-xl font-bold transition"
+      >
+        Salir de la aplicación
+      </button>
+
+    </div>
+
+   
+    <div class="border border-slate-200 rounded-2xl overflow-hidden">
+
+      <div class="bg-slate-100 border-b border-slate-200 px-5 py-4">
+        <h2 class="text-xl font-semibold text-slate-800">
+          Tareas
+        </h2>
+      </div>
+
+      <ul id="lista" class="divide-y divide-slate-200"></ul>
+
+      <div
+        id="empty"
+        class="text-center py-10 text-slate-400"
+      >
+        No hay tareas todavía.
+      </div>
+
+    </div>
+
+    
+    <p
+      id="msg"
+      class="text-center text-3xl font-bold text-green-600 mt-8"
+    ></p>
+
+  </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
