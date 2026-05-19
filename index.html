@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
     <title>Tareas</title>
 </head>
-<body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
 
-  <div class="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-8 border border-slate-200">
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-4 sm:p-6">
 
-   
-    <div class="text-center mb-8">
+  <div class="w-full max-w-3xl bg-white shadow-xl rounded-2xl p-5 sm:p-8 border border-slate-200">
 
-      <h1 class="text-4xl font-bold text-slate-800">
+    <!-- HEADER -->
+    <div class="text-center mb-6 sm:mb-8">
+
+      <h1 class="text-2xl sm:text-4xl font-bold text-slate-800">
         Lista de Tareas
       </h1>
 
-      <p class="text-slate-500 mt-2">
+      <p class="text-slate-500 mt-2 text-sm sm:text-base">
         Gestiona tus tareas fácilmente
       </p>
 
     </div>
 
-   
-    <div class="flex gap-3 mb-6">
+    <!-- INPUT -->
+    <div class="flex flex-col sm:flex-row gap-3 mb-6">
 
       <input
         id="inputTarea"
         type="text"
         placeholder="Escribe una tarea..."
-        class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="flex-1 px-4 py-3 rounded-xl border border-slate-300 
+               focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
       />
 
       <button
         id="btnAdd"
         onclick="addTask()"
-        class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition"
+        class="w-full sm:w-auto px-5 py-3 bg-blue-600 hover:bg-blue-700 
+               text-white rounded-xl font-semibold transition text-sm sm:text-base"
       >
         Añadir
       </button>
 
     </div>
 
-    
-    <div class="grid grid-cols-2 gap-4 mb-6">
+    <!-- BUTTONS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
 
       <button
         id="btnShow"
         onclick="showTasks()"
-        class="py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-medium transition"
+        class="py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-medium transition text-sm sm:text-base"
       >
         Mostrar tareas
       </button>
@@ -57,7 +60,7 @@
       <button
         id="btnDelete"
         onclick="deleteTask()"
-        class="py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition"
+        class="py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition text-sm sm:text-base"
       >
         Eliminar tarea
       </button>
@@ -65,41 +68,36 @@
       <button
         id="btnExit"
         onclick="exitApp()"
-        class="col-span-2 py-3 bg-amber-400 hover:bg-amber-500 text-slate-900 rounded-xl font-bold transition"
+        class="sm:col-span-2 py-3 bg-amber-400 hover:bg-amber-500 
+               text-slate-900 rounded-xl font-bold transition text-sm sm:text-base"
       >
         Salir de la aplicación
       </button>
 
     </div>
 
-   
+    <!-- LIST -->
     <div class="border border-slate-200 rounded-2xl overflow-hidden">
 
-      <div class="bg-slate-100 border-b border-slate-200 px-5 py-4">
-        <h2 class="text-xl font-semibold text-slate-800">
+      <div class="bg-slate-100 border-b border-slate-200 px-4 sm:px-5 py-3 sm:py-4">
+        <h2 class="text-lg sm:text-xl font-semibold text-slate-800">
           Tareas
         </h2>
       </div>
 
       <ul id="lista" class="divide-y divide-slate-200"></ul>
 
-      <div
-        id="empty"
-        class="text-center py-10 text-slate-400"
-      >
+      <div id="empty" class="text-center py-8 sm:py-10 text-slate-400 text-sm sm:text-base">
         No hay tareas todavía.
       </div>
 
     </div>
 
-    
-    <p
-      id="msg"
-      class="text-center text-3xl font-bold text-green-600 mt-8"
-    ></p>
+    <!-- MESSAGE -->
+    <p id="msg" class="text-center text-xl sm:text-3xl font-bold text-green-600 mt-6 sm:mt-8"></p>
 
   </div>
 
-    <script src="./app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
